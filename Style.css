@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #222;
+  color: white;
+  padding: 50px;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#doors-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.door {
+  width: 100px;
+  height: 160px;
+  background-image: url('imagens/Porta.jpeg');
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.door:hover {
+  transform: scale(1.1);
+}
+
+#message {
+  margin-top: 40px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: yellow;
+}
+
+.shuffling {
+  animation: shuffle 0.8s infinite;
+}
+
+@keyframes shuffle {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-30px); }
+  50%  { transform: translateX(30px); }
+  75%  { transform: translateX(-30px); }
+  100% { transform: translateX(0); }
+}
+
+#erro-grande, #presente-grande {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: black;
+}
+
+#erro-grande img {
+  max-width: 80vw;
+  max-height: 80vh;
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgb(0, 0, 0);
+}
+
+#presente-grande {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#presente-grande img {
+  max-width: 80vw;
+  max-height: 80vh;
+  border: 5px solid limegreen;
+  border-radius: 20px;
+  box-shadow: 0 0 40px limegreen;
+}
